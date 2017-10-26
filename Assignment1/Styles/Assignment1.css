@@ -1,7 +1,8 @@
 
-h1 {font-family: cursive; text-align: center;}
+h1 {font-family: cursive; text-align: center; width: 600px;}
 h2 {font-family: sans-serif; text-align:  center; }
 h4 {font-family: sans-serif; text-align: center;}
+#title{width: 600px;}
 #section1 {visibility: hidden; position: absolute; height: 75%; width: 600px; overflow: scroll; 
 background-color: #CCFFFF; }
 #section2 {visibility: hidden; position: absolute; height: 75%; width: 600px; overflow: scroll; 
