@@ -7,5 +7,5 @@ h4 {font-family: sans-serif; text-align: center;}
 background-color: #CCFFFF; }
 #section2 {visibility: hidden; position: absolute; height: 75%; width: 600px; overflow: scroll; 
 background-color: #99FFFF; }
-img {height: 25%; width: 25%; }
+img {width="560"; height="315"; }
 #footer {font-size: small; text-align: center; font-style: italic; background-color: khaki; position: fixed; margin: 0 0 0 0; bottom: 0px; left: 10px; right: 10px; width: 600px;}
