@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <title>Chris Ruggieri Assignment 2</title>
+    <link rel= "stylesheet" type= "text/css" href= "./Styles/Assignment2.css" />
+    <script type="text/javascript" src="./js/Assignment2.js"></script>
+    
+</head>
+
+<body>
+<header>
+        <h1>
+            Chris Ruggieri Assignment 2
+        </h1>
+</header>
+    <hr>
+    <section id ="title">
+<select name= "selection" id= "selection" onchange="whichselect(this.value);">
+        <option value= "Pleaseselect" selected="selected">Please Select An Option</option>
+        <option value= "ShowAll">All Customers</option>
+        <option value= "InputCustomer">Enter Customer Name</option>
+        <option value = "about">About</option>
+               
+    </select>
+</section>
+<hr>
+
+<section id= "section1">
+        <h2> Customer List  </h2>
+        <hr>
+        <label id = "CustList">Customer List</label>
+       
+    </section>
+
+ <section id= "section2">
+        <h2> Customer Order History</h2>
+        <br>
+        <form name="input">
+        <label>Please Enter the Customer ID</label>
+        <input type= "text" id="Input" name= "Input" size= 40/>
+        <input type= "button" id="submit" name= "submit" value= "Submit"
+        onclick= "StoreInput () ;">
+        <br>
+        </form>
+        <hr>
+        <label id = "CustHist">Order History</label>
+        <hr>
+        <br>
+        <input type= "button" id= "back" name= "Back" value= "Back"
+        onclick= "whichselect ('ShowAll') ;">
+        
+        
+    </section>
+   <section id="aboutsection">
+    <h2>About This App</h2>
+    <br>
+    This app was written by Chris Ruggieri for UAB IS 633 Mobile Applications Course.  This app allows you to pull Customer
+    Names and Order Histories for a ficticous company.  You can select "All Customers" to pull a table of all the stores.
+    You can select the store and pull its history or you can input the Customer ID to pull its history.
+   </section>
+</body>
+</html>
