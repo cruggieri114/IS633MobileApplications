@@ -4,11 +4,14 @@ function whichselect (value){
     document.getElementById("section1").style.visibility = "hidden";
     document.getElementById("section2").style.visibility = "hidden";
     document.getElementById("aboutsection").style.visibility = "hidden";
+    document.getElementById("Input").value = "";
+    
     
     
     switch (value){
         case "ShowAll":
             document.getElementById("section1").style.visibility = "visible";
+            document.getElementById("CustHist").innerHTML = "";
             AllCustomers();
             break;
         case "InputCustomer":
