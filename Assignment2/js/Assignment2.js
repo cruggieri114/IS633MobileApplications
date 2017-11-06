@@ -1,3 +1,4 @@
+var CustHead;
 
 function whichselect (value){
     //function to get the selection in the drop down list
@@ -12,6 +13,7 @@ function whichselect (value){
         case "ShowAll":
             document.getElementById("section1").style.visibility = "visible";
             document.getElementById("CustHist").innerHTML = "";
+            document.getElementById("CustHeader").innerHTML = "Order History";
             AllCustomers();
             break;
         case "InputCustomer":
@@ -49,27 +51,31 @@ function GenerateASOutput(result){
 var count = 0;
 var table = document.createElement('table');
 
-table = "<table class = 'tablecenter' border = '1'><tr><th> Customer ID  </th><th>  Customer Name  </th><th> City </th></tr>";
+table = "<table class = 'tablecenter' id 'ListTable' border = '1'><tr><th> Customer ID  </th><th>  Customer Name  </th><th> City </th></tr>";
 //Loop to extract data from the response object
 for (count = 0; count <  result.GetAllCustomersResult.length; count++)
 {
     
     var custID = result.GetAllCustomersResult[count].CustomerID;
-    var custName = '<a href="javascript:Orders(' + "'" + custID + "');" + '">';
-    custName += result.GetAllCustomersResult[count].CompanyName;
-    custName += '</a>';
+    CustHead = result.GetAllCustomersResult[count].CompanyName;
+    var CustName = '<a href="javascript:Orders(' + "'" + custID + ", " + CustHead + "'); " + ' " > ' ;
+    CustName += result.GetAllCustomersResult[count].CompanyName; 
+    CustName += '</a>';
+    
     var custCity = result.GetAllCustomersResult[count].City;
     
-   table += "<tr><td>" + (custID) + "</td><td>" + (custName) + "</td><td>" + (custCity) + "</td></tr>";
+   table += "<tr><td>" + (custID) + "</td><td>" + (CustName) + "</td><td>" + (custCity) + "</td></tr>";
 }
 table += "</table>";
 
 document.getElementById("CustList").innerHTML = table;
 
+
 }
 
 function Orders(custID){
-    
+     
+    document.getElementById("CustHeader").innerHTML = custID + " Order History";
     var xmlhttp = new XMLHttpRequest();
     var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/getCustomerOrderHistory/";
     url += custID;
@@ -122,6 +128,7 @@ function StoreInput (){
  
 inputrep.open("GET", url, true);
 inputrep.send();
+
 function GenerateOutput(result) 
 //Function that displays results
 {
@@ -137,4 +144,6 @@ whichselect("InputCustomer");
 
 }
     }
+
+    
 }
