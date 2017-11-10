@@ -10,11 +10,11 @@ function whichselect (value){
     var obj1 = document.getElementById("confirm");
     var obj2 = document.getElementById("confirmyes");
     var obj3 = document.getElementById("confirmno");
-    var obj4 = document.getElementById("continue");
+    
     obj1.style.display = "none";
     obj2.style.display = "none";
     obj3.style.display = "none";
-    obj4.style.display = "none";
+    
     
     
     switch (value){
