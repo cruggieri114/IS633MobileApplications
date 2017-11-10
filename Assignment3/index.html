@@ -16,8 +16,118 @@
         </h1>
 </header>
     <hr>
+    <section id ="title">
+<select name= "selection" id= "selection" onchange="whichselect(this.value);">
+        <option value= "Pleaseselect" selected="selected">Please Select An Option</option>
+        <option value= "ShowAll">All Customers</option>
+        <option value= "InputCustomer">Enter Customer Name</option>
+        <option value= "current">List Current Orders</option>
+        <option value= "change">Change An Order</option>
+        <option value = "about">About</option>
+               
+    </select>
+</section>
+<hr>
 
+<section id= "section1">
+        <h2> Customer List  </h2>
+        <hr>
+        <label id = "CustList">Customer List</label>
+       
+    </section>
 
-
+ <section id= "section2">
+        <h2> Customer Order History</h2>
+        <br>
+        <form name="input">
+        <label>Please Enter the Customer ID</label>
+        <input type= "text" id="Input" name= "Input" size= 40/>
+        <input type= "button" id="submit" name= "submit" value= "Submit"
+        onclick= "StoreInput () ;">
+        <br>
+        </form>
+        <hr>
+        <label id = "CustHist">Order History</label>
+        <hr>
+        <br>
+        <input type= "button" id= "back" name= "Back" value= "Back"
+        onclick= "whichselect ('ShowAll') ;">
+        
+        
+    </section>
+   <section id="aboutsection">
+    <h2>About This App</h2>
+    <br>
+    This app was written by Chris Ruggieri for UAB IS 633 Mobile Applications Course.  This app allows you to pull Customer
+    Names and Order Histories for a ficticous company.  You can select "All Customers" to pull a table of all the stores.
+    You can select the store and pull its history or you can input the Customer ID to pull its history.
+   </section>
+   
+   <section id="custorders">
+    <h2>Customer Current Orders</h2>
+    <br>
+    <form name="orderlist">
+        <label>Please Enter the Customer ID</label>
+        <input type= "text" id="List" name= "Input" size= 40/>
+        <input type= "button" id="submitlist" name= "listbutton" value= "Submit"
+        onclick= "CurrentOrder () ;">
+        <br>
+        </form>
+        <label id= "listorder">Current Orders</label>
+        <br>
+        <input type= "button" id= "back2" name= "Back2" value= "Back"
+        onclick= "whichselect ('ShowAll') ;">
+   </section>
+   <section id= "changeorder">
+    <h2>Change Current Order</h2>
+    <br>
+    <form name = "changeinput">
+        <label> Please Enter an Order Number</label>
+        <input type= "text" id="ordernum" name="ordernum" size= 40/>
+        <input type= "button" id="submitorder" name= "ordernumbutton" value="Submit Order Number"
+               onclick= "InputOrderNumber() ;">
+        <br>
+    </form>
+    <label id="changelabel">Change Form</label>
+    <form id="changeform">
+        <table>
+            <tr>
+                <th>Order ID: </th>
+                <th><label id= "orderlabel"></label><br></th>
+            </tr>
+            <tr>
+                <th>Shipping Address: </th>
+                <th><input type= "text" id= "shipaddress" size= 40 />  <br></th>
+            </tr>
+            <tr>
+                <th>Shipping City </th>
+                <th><input type= "text" id= "shipcity" size= 40 />  <br></th>
+            </tr>
+            <tr>
+                <th>Shipping Name </th>
+                <th><input type= "text" id= "shipname" size= 40 />  <br></th>
+            </tr>
+            <tr>
+                <th>Shipping Postal Code </th>
+                <th><input type= "text" id= "shipcode" size= 40 /> <br></th>
+            </tr>
+        </table>
+        <input type= "button" id="makechange" name="makechange" value="Submit Changes"
+               onclick="ShowConfirm() ;">
+        <br>
+    </form>
+    <form id="confirmform">
+        <label id="confirm">Are you sure you want to make these changes?</label><br>
+        <input type = "button" id="confirmyes" name="confirmyes" value="Yes, make changes"
+               onclick="MakeChanges() ;">
+        <label id="spaces">       </label>
+        <input type = "button" id="confirmno" name="confirmno" value="No, Do NOT make these changes"
+               onclick="changeorder() ;">
+        <br><input type= "button" id="continue" name="continue" value="Continue to All Customers"
+                onclick="whichselect('ShowAll') ;">
+    </form>
+    <input type= "button" id= "backfromchange" name= "Backchange" value= "Back To All"
+        onclick= "whichselect ('ShowAll') ;">
+   </section>
 </body>
 </html>
