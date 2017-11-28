@@ -30,3 +30,8 @@ table, th, td {table-layout: auto; padding: 5px; text-align: center; background-
 #deletesection{
     visibility: hidden; overflow: scroll; height: 75%; position: absolute; width: 600px;font-size: 18pt; text-align: center; font-style: normal; background-color: khaki; margin: 150px 0 0 0; top: 0px; left: 10px; right: 10px;
 }
+#geolocat{
+    visibility: hidden; overflow: scroll; height: 75%; position: absolute; width: 600px;font-size: 18pt; text-align: center; font-style: normal; background-color: khaki; margin: 150px 0 0 0; top: 0px; left: 10px; right: 10px;
+}
+#map{ align-content: center; width:400px; height: 400px;
+}

@@ -8,6 +8,7 @@ function whichselect (value){
     document.getElementById("changeorder").style.visibility = "hidden";
     document.getElementById("addsection").style.visibility = "hidden";
     document.getElementById("deletesection").style.visibility = "hidden";
+    document.getElementById("geolocat").style.visibility = "hidden";
     document.getElementById("Input").value = "";
     var obj1 = document.getElementById("confirm");
     var obj2 = document.getElementById("confirmyes");
@@ -44,6 +45,9 @@ function whichselect (value){
             break;
         case "delete":
             document.getElementById("deletesection").style.visibility = "visible";
+            break;
+        case "location":
+            document.getElementById("geolocat").style.visibility = "visible";
             break;
         default:
             alert("Please Select A Valid Option");
@@ -558,4 +562,38 @@ function GenerateDeleteResult(success, exception){
     default:
     alert("The operation code returned is not identifiable.");
 }
+}
+
+function GetLocation(){
+    var geo = navigator.geolocation;
+    
+    if (geo){
+        geo.getCurrentPosition(showPosition);
+    }
+    else{
+        alert("Geolocation is not supported");
+    }
+}
+
+function showPosition(position){
+    var latt = position.coords.latitude;
+    var longi= position.coords.longitude;
+    document.getElementById("lattitude").innerHTML = latt;
+    document.getElementById("longitude").innerHTML = longi;
+    CreateMap(latt,longi);
+}
+function CreateMap(latt, longi){
+    var uluru = {lat: latt, lng: longi};
+    var map = new google.maps.Map(document.getElementById("map"),{
+        center: new google.maps.LatLng (latt, longi),
+        zoom: 10,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    });
+    
+     var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+     });
+    
+    
 }
