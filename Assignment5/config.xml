@@ -21,6 +21,6 @@ version     = "0.0.1" >
 <access origin="*" />
 <plugin name="cordova-plugin-geolocation" source="npm"/>
 <icon src = "./Images/appicon.png"/>
-<splash src = "./Images/default.png" width="600" height="600" />
+<splash src = "./Images/Default.png" width="600" height="600" />
 <preference name="SplashScreenDelay" value="3000"/>
 </widget>
