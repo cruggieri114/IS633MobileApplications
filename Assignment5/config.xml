@@ -3,8 +3,9 @@
 xmlns:gap   = "http://phonegap.com/ns/1.0"
 id          = "edu.uab.business.studentapp"
 versionCode = "1" 
-version     = "0.0.1" >
-<android-versionCode = "7" />
+version     = "0.0.1" 
+android-versionCode = "7" >
+
 <!--versionCode is optional and Android only -->
 <name>
     Chris Ruggieri Assignment 5
