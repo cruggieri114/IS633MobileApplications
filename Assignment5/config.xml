@@ -2,9 +2,9 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 xmlns:gap   = "http://phonegap.com/ns/1.0"
 id          = "edu.uab.business.studentapp"
-versionCode = "1" 
+versionCode = "6.4" 
 version     = "0.0.1" 
-android-versionCode = "7" >
+android-versionCode = "6.4" >
 
 <!--versionCode is optional and Android only -->
 <name>
