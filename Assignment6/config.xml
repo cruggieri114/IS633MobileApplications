@@ -77,5 +77,9 @@ version     = "0.0.1" >
     <splash src="www/Android/res/drawable-land-xxhdpi/screen.png" width="1600" height="960"/>
     <splash src="www/Android/res/drawable-xxxhdpi/screen.png" width="1280" height="1920"/>
     <splash src="www/Android/res/drawable-land-xxxhdpi/screen.png" width="1920" height="1280"/>
-  </platform>    
+  </platform>  
+  
+<plugin name="cordova-plugin-camera" source="npm" />
+<plugin name="cordova-pluing-contacts" source="npm" />
+
 </widget>

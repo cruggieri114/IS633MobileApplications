@@ -10,6 +10,8 @@ function whichselect (value){
     document.getElementById("deletesection").style.visibility = "hidden";
     document.getElementById("geolocat").style.visibility = "hidden";
     document.getElementById("Input").value = "";
+    document.getElementById("accesscamera").style.visibility = "hidden";
+    document.getElementById("getcontacts").style.viibility = "hidden";
     var obj1 = document.getElementById("confirm");
     var obj2 = document.getElementById("confirmyes");
     var obj3 = document.getElementById("confirmno");
@@ -48,6 +50,12 @@ function whichselect (value){
             break;
         case "location":
             document.getElementById("geolocat").style.visibility = "visible";
+            break;
+        case "camera":
+            document.getElementById("accesscamera").style.visibility = "visible";
+            break;
+        case "contacts":
+            document.getElementById("getcontacts").style.visibility = "visible";
             break;
         default:
             alert("Please Select A Valid Option");
@@ -594,6 +602,54 @@ function CreateMap(latt, longi){
         position: uluru,
         map: map
      });
-    
-    
+}     
+function Photo(){
+navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: 
+destinationtype.FILE_URI, saveToPhotoAlbum: true });
+
+}
+
+function onSuccess(imageURI)
+{
+var picdisplay = document.getElementById("picturesque");
+pickdisplay.style.display = 'block';
+pickdisplay.src = imageURI; 
+}
+function onFail(message)
+{
+alert("Failed because: " + message);
+}
+
+
+function ChooseContact()
+{
+
+
+navigator.contacts.pickContact(function(contact) 
+{
+var contactinfo = "";
+contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
+var count = 0;
+if (contact.phoneNumbers !== null) 
+{
+for (count=0; count < contact.phoneNumbers.length; count++) 
+{
+contactinfo += contact.phoneNumbers[count].type + ": " + 
+contact.phoneNumbers[count].value + "<br>";
+}
+}
+if (contact.emails !== null) 
+{
+for(count=0; count < contact.emails.length; count++) 
+{
+contactinfo += contact.emails[count].type + ": " + contact.emails[count].value + 
+"<br>";
+}
+}
+document.getElementById("contactname").innerHTML = contactinfo;
+}, function(err) 
+{
+alert("Error: " + err);
+}
+);    
 }

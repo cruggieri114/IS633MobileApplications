@@ -4,9 +4,25 @@
 <head>
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <title>Chris Ruggieri Assignment 5</title>
-    <link rel= "stylesheet" type= "text/css" href= "./Styles/Assignment5.css" />
-    <script type="text/javascript" src="./js/Assignment5.js"></script>
-     <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDFm8bsWubC3lanQ5SsPhaq2A7KIZb3JQA&callback=CreateMap"></script> 
+    <link rel= "stylesheet" type= "text/css" href= "./Styles/Assignment6.css" />
+    <script type="text/javascript" src="./js/Assignment6.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDFm8bsWubC3lanQ5SsPhaq2A7KIZb3JQA&callback=CreateMap"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+<script>
+    
+var objContact;
+var picturesource;
+var destinationtype;
+
+document.addEventListener("deviceready",onDeviceReady,false);
+
+function onDeviceReady(){
+picturesource = navigator.camera.PictureSourceType;
+destinationtype = navigator.camera.DestinationType;
+objContact = navigator.contacts.create();
+}
+</script> 
     
 </head>
 
@@ -27,6 +43,8 @@
         <option value= "add">Add A Customer</option>
         <option value= "delete">Delete a Customer</option>
         <option value= "location">Get Current Location</option>
+        <option value= "camera">Take A Picture</option>
+        <option value= "contacts">Access Contacts</option>
         <option value = "about">About</option>
                
     </select>
@@ -188,6 +206,24 @@
     <label id="longitude"></label>
     <br><br>
     <div id="map"></div>
+   </section>
+   
+   <section id="accesscamera">
+    <h2>Take A Picture</h2>
+    <hr>
+    <button onclick = "Photo() ; ">Take Picture</button>
+    <br>
+    <img id="picturesque" src=""/>
+    <br><br>
+   </section>
+   
+   <section id="getcontacts">
+    <h2>Access Contacts</hr2>
+    <br><hr>
+    <button onclick="ChooseContact() ;">Choose A Contact</button>
+    <br><br>
+    <label>Contact Name</label>
+    <label id="contactname"></label>
    </section>
 </body>
 </html>
