@@ -19,7 +19,7 @@ version     = "0.0.1" >
 <preference name="phonegap-version" value="cli-7.0.1" />
 <plugin name="cordova-plugin-whitelist" source="npm" />
 <access origin="*" />
-<plugin name="org.apache.cordova.geolocation" spec="0.3.12" source="pgb" />
+<plugin name="org.apache.cordova.geolocation" source="pgb" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 <icon src = "./icon.png"/>
 <splash src= "./splash.png"/>
