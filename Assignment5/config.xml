@@ -20,7 +20,8 @@ version     = "0.0.1" >
 <plugin name="cordova-plugin-whitelist" source="npm" />
 <access origin="*" />
 <plugin name="cordova-plugin-geolocation" spec="2.4.3" source="npm" />
-
+<icon src="icon.png" />
+<splash src="splash.png" />
 <plugin name="cordova-plugin-splashscreen" source="npm"/>
 
 <preference name="SplashScreenDelay" value="3000"/>
