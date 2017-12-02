@@ -506,7 +506,7 @@ function DeleteCust(custID){
             document.getElementById("delID").value = custID;
         }
         
-        var deleteID = document.getElementById("delID").value;
+        var deleteID = custID;
         deleteID = deleteID.toUpperCase();
         document.getElementById("delID").value = deleteID;
         if (deleteID.length != "5"){
