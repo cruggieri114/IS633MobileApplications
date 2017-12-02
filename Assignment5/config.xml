@@ -21,6 +21,7 @@ version     = "0.0.1" >
 <access origin="*" />
 <plugin name="cordova-plugin-geolocation" source="npm" />
 <icon src="icon.png" />
+<plugin name="cordova-plugin-splashscreen" source="npm"/>
 <splash src="splash.png" />
 <preference name="SplashScreenDelay" value="30000"/>
 </widget>
