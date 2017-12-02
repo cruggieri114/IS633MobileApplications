@@ -23,5 +23,5 @@ version     = "0.0.1" >
 <icon src="icon.png" />
 <plugin name="cordova-plugin-splashscreen" source="npm"/>
 <splash src="splash.png" />
-<preference name="SplashScreenDelay" value="30000"/>
+<preference name="SplashScreenDelay" value="3000"/>
 </widget>
