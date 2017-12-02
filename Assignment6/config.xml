@@ -80,6 +80,6 @@ version     = "0.0.1" >
   </platform>  
   
 <plugin name="cordova-plugin-camera" source="npm" />
-<plugin name="cordova-pluin-contacts" source="npm" />
+<plugin name="cordova-plugin-contacts" source="npm" />
 
 </widget>
