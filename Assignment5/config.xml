@@ -19,9 +19,5 @@ version     = "0.0.1" >
 <preference name="phonegap-version" value="cli-7.0.1" />
 <plugin name="cordova-plugin-whitelist" source="npm" />
 <access origin="*" />
-<plugin name="cordova-plugin-geolocation" source="npm" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-<icon src = "icon.png"/>
-<splash src= "splash.png"/>
-<preference name="SplashScreenDelay" value="3000" />
+<
 </widget>
