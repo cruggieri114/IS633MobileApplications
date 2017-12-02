@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 xmlns:gap   = "http://phonegap.com/ns/1.0"
 id          = "edu.uab.business.studentapp"
-versionCode = "1" 
+versionCode = "6.4.0" 
 version     = "0.0.1" >
 <!--versionCode is optional and Android only -->
 <name>
@@ -19,7 +19,7 @@ version     = "0.0.1" >
 <preference name="phonegap-version" value="cli-7.0.1" />
 <plugin name="cordova-plugin-whitelist" source="npm" />
 <access origin="*" />
-<plugin name="cordova-plugin-geolocation" spec= "2.0" source="npm" />
+<plugin name="cordova-plugin-geolocation" spec= "3.0" source="npm" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 <icon src = "./icon.png"/>
 <splash src= "./splash.png"/>
