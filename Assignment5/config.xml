@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 xmlns:gap   = "http://phonegap.com/ns/1.0"
 id          = "edu.uab.business.studentapp"
-versionCode = "6.3.0" 
+versionCode = "1" 
 version     = "0.0.1" >
 <!--versionCode is optional and Android only -->
 <name>
@@ -21,7 +21,7 @@ version     = "0.0.1" >
 <access origin="*" />
 <plugin name="cordova-plugin-geolocation" source="npm" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-<icon src = "./icon.png"/>
-<splash src= "./splash.png"/>
+<icon src = "icon.png"/>
+<splash src= "splash.png"/>
 <preference name="SplashScreenDelay" value="3000" />
 </widget>
