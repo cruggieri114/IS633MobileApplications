@@ -6,11 +6,11 @@ versionCode = "1"
 version     = "0.0.1" >
 <!--versionCode is optional and Android only -->
 <name>
-    Chris Ruggieri Assignment 5
+    Chris Ruggieri Assignment 6
 </name>
 
 <description>
-    Chris Ruggieri Assignment 5
+    Chris Ruggieri Assignment 6
 </description>
 
 <author>
@@ -80,6 +80,6 @@ version     = "0.0.1" >
   </platform>  
   
 <plugin name="cordova-plugin-camera" source="npm" />
-<plugin name="cordova-pluing-contacts" source="npm" />
+<plugin name="cordova-pluin-contacts" source="npm" />
 
 </widget>
