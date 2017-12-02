@@ -16,8 +16,10 @@ version     = "0.0.1" >
 <author>
     Chris Ruggieri
 </author>
-<preference name="phonegap-version" value="cli-7.0.1" />
+<preference name="phonegap-version" value="cli-6.1.0" />
 <plugin name="cordova-plugin-whitelist" source="npm" />
 <access origin="*" />
-<
+<plugin name="cordova-plugin-geolocation" source="npm" />
+<icon src="icon.png" />
+<splash src="splash.png" />
 </widget>
