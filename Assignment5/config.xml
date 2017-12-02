@@ -22,5 +22,5 @@ version     = "0.0.1" >
 <plugin name="cordova-plugin-geolocation" source="npm" />
 <icon src="icon.png" />
 <splash src="splash.png" />
-<preference name="SplashScreenDelay" value="5000"/>
+<preference name="SplashScreenDelay" value="30000"/>
 </widget>
