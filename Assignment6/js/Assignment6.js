@@ -605,7 +605,7 @@ function CreateMap(latt, longi){
 }     
 function Photo(){
     
-navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URI, saveToPhotoAlbum: true });
+navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URI, saveToPhotoAlbum: true, sourceType:source });
 
 }
 
@@ -613,7 +613,7 @@ function onSuccess(imageURI)
 {
 var picdisplay = document.getElementById("picturesque");
 pickdisplay.style.display = 'block';
-pickdisplay.src = imageURI; 
+pickdisplay.src =  imageURI; 
 }
 function onFail(message)
 {
@@ -664,12 +664,21 @@ function SearchContact(){
     options.hasPhoneNumber = true;
     var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
     navigator.contacts.find(fields, onSuccess, onError, options);
+    
 function onSuccess(contacts) {
     alert('Found ' + contacts.length + ' contacts.');
-};
+    for (var i = 0; i<contacts.length; i++){
+        var name = contacts[i].displayName;
+        var phone = contacts[i].PhoneNumber;
+        var email = contacts[i].emails;
+    var searchresult = "Display Name = " + (name) + " " + "Phone Number = " + (phone) +
+    "Email Address = " + (email) + "<br>";
+    document.getElementById("contactname").innerHTML = searchresult;
+    }
+}
 
 function onError(contactError) {
     alert('onError!');
-};
+}
 
 }
