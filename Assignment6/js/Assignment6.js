@@ -603,9 +603,9 @@ function CreateMap(latt, longi){
         map: map
      });
 }     
-function Photo(){
+function Photo(source){
     
-navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URI, saveToPhotoAlbum: true, sourceType:source });
+navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URI, saveToPhotoAlbum: true, sourceType:source, targetWidth: 550, targetHeight: 550 });
 
 }
 
