@@ -604,8 +604,8 @@ function CreateMap(latt, longi){
      });
 }     
 function Photo(){
-navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: 
-destinationtype.FILE_URI, saveToPhotoAlbum: true });
+    
+navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URI, saveToPhotoAlbum: true });
 
 }
 
@@ -647,9 +647,29 @@ contactinfo += contact.emails[count].type + ": " + contact.emails[count].value +
 }
 }
 document.getElementById("contactname").innerHTML = contactinfo;
-}, function(err) 
+},
+function(err) 
 {
 alert("Error: " + err);
 }
 );    
+}
+function SearchContact(){
+   
+    var lastname = document.getElementById("contactlast").value;
+    var options      = new ContactFindOptions();
+    options.filter   = lastname;
+    options.multiple = true;
+    options.desiredFields = [navigator.contacts.fieldType.id];
+    options.hasPhoneNumber = true;
+    var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+    navigator.contacts.find(fields, onSuccess, onError, options);
+function onSuccess(contacts) {
+    alert('Found ' + contacts.length + ' contacts.');
+};
+
+function onError(contactError) {
+    alert('onError!');
+};
+
 }
