@@ -26,28 +26,28 @@ version     = "0.0.1" >
 
 <preference name="SplashScreenDelay" value="3000"/>
  <platform name="ios">
-     <config-file target="*-Info.plist" parent="NSCameraUsageDescription" overwrite="true">
-
-         <string>need camera access to take pictures</string>
-
-      </config-file>
-            
-      <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" overwrite="true">
-
-         <string>need to photo library access to get pictures from there</string>
-
-      </config-file>
+     
     <plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" />
-    <config-file target="*-Info.plist" parent="NSContactsUsageDescription" overwrite="true">
-        <string>need contacts to search contact list</string>
-    </config-file>
-
-<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+    <plugin name="cordova-plugin-camera" source="npm" spec= "3.0.0"/>
+<config-file target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+    <string>need camera access to take pictures</string>
+</config-file>
+<config-file target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+    <string>need to photo library access to get pictures from there</string>
+</config-file>
+<config-file target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
     <string>need location access to find things nearby</string>
-</edit-config>
+</config-file>
+<config-file target="NSContactsUsageDescription" file="*-Info.plist" mode="merge">
+    <string>need contacts access to search friends</string>
+</config-file>
+<config-file target = "CAMERA_USAGE_DESCRIPTION" file="*-Info.plist" mode="merge">
+    <string>need camera access to take picture in app</string>
+</config-file>
+<config-file target="PHOTOLIBRARY_USAGE_DESCRIPTION" file="*-Info.plist" mode="merge">
+    <string>need camera access to take picture in app</string>
+</config-file>
 
-
-<plugin name="cordova-plugin-camera" source="npm" spec= "3.0.0"/>
     
 <cordova plugin = "cordova-plugin-ios-camera-permissions --save" />
     <icon src="www/iOS/Resources/icons/Icon-small.png" width = "29" height="29"/>
