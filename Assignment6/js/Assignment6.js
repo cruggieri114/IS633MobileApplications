@@ -673,7 +673,7 @@ function onSuccess(contacts) {
     for (var i = 0; i<contacts.length; i++){
         
         var phone = "";
-        var name = contacts[i].displayName;
+        var name = contacts[i].name;
         if (contacts.phoneNumbers !== null) 
 {
 for (count=0; count < contacts[i].phoneNumbers.length; count++) 
