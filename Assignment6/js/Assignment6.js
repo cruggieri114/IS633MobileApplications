@@ -681,7 +681,7 @@ function onSuccess(contacts) {
         {
         phone += contacts[i].phoneNumbers[count].value;
         }
-        if (contact.emails !== null) 
+        if (contacts.emails !== null) 
         {
         for(count=0; count < contacts.emails.length; count++) 
         {
