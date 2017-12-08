@@ -667,6 +667,7 @@ function SearchContact(){
     
 function onSuccess(contacts) {
     alert('Found ' + contacts.length + ' contacts.');
+    var count = "";
     var table = document.createElement ("table");
     table = "<table border = 1><tr><th>Display Name</th><th>Phone Number</th><th>Email Address</th></tr>";
     for (var i = 0; i<contacts.length; i++){
