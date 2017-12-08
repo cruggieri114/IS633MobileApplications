@@ -680,7 +680,7 @@ function onSuccess(contacts) {
             
         for (count=0; count < contacts[i].phoneNumbers.length; count++) 
         {
-        phone += contacts[i].phoneNumbers[count].value;
+        phone += contacts[i].phoneNumbers[count].value + ", ";
         }
         
         }
