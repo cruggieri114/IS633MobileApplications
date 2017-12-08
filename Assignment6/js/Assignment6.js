@@ -662,7 +662,7 @@ function SearchContact(){
     options.multiple = true;
     options.desiredFields = ["*"];
     options.hasPhoneNumber = true;
-    var fields = [navigator.contacts.fieldType.displayName];
+    var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumber, navigator.contacts.fieldType.emails];
     navigator.contacts.find(fields, onSuccess, onError, options);
     
 function onSuccess(contacts) {
