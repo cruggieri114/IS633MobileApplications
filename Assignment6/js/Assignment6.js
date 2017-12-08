@@ -677,13 +677,13 @@ function onSuccess(contacts) {
         var email = "";
         if (contacts.phoneNumbers !== null) 
         {
-        for (count=0; count < contact.phoneNumbers.length; count++) 
+        for (count=0; count < contacts.phoneNumbers.length; count++) 
         {
         phone += contacts[i].phoneNumbers[count].value;
         }
         if (contact.emails !== null) 
         {
-        for(count=0; count < contact.emails.length; count++) 
+        for(count=0; count < contacts.emails.length; count++) 
         {
         email += contacts[i].emails[count].value;
         }
