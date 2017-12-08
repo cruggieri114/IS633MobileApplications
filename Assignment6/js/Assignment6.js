@@ -687,10 +687,10 @@ phone += count[i].phoneNumbers[count].value + ", ";
     }
     document.getElementById("contactname").innerHTML = table;
 
-
+}
 function onError(contactError) {
     alert('onError!');
 }
 
-}
+
 }
