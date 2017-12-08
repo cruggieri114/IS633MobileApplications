@@ -662,15 +662,15 @@ function SearchContact(){
     options.multiple = true;
     //options.desiredFields = "*";
     options.hasPhoneNumber = true;
-    var fields = ["displayName"];
+    var fields = [navigator.contacts.fieldType.displayName];
     navigator.contacts.find(fields, onSuccess, onError, options);
     
-function onSuccess(contacts, fields) {
+function onSuccess(contacts) {
     alert('Found ' + contacts.length + ' contacts.');
     var table = document.createElement ("table");
     table = "<table border = 1><tr><th>Display Name</th><th>Phone Number</th><th>Email Address</th></tr>";
     for (var i = 0; i<contacts.length; i++){
-        console.log(fields[i].displayName);
+        
         var name = contacts[i].displayName;
         var phone = contacts[i].phoneNumber;
         var email = contacts[i].email;
