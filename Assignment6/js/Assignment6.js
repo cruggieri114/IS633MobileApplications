@@ -674,11 +674,11 @@ function onSuccess(contacts) {
         
         var phone = "";
         var name = contacts[i].displayName;
-        if (contact.phoneNumbers !== null) 
+        if (contacts.phoneNumbers !== null) 
 {
-for (count=0; count < contact[i].phoneNumbers.length; count++) 
+for (count=0; count < contacts[i].phoneNumbers.length; count++) 
 {
-phone += count[i].phoneNumbers[count].value + ", ";
+phone += contacts[i].phoneNumbers[count].value + ", ";
 }
         }
         
