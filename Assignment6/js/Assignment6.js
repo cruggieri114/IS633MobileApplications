@@ -667,14 +667,16 @@ function SearchContact(){
     
 function onSuccess(contacts) {
     alert('Found ' + contacts.length + ' contacts.');
+    var table = document.createElement ("table");
+    table = "<table border = 1><tr><th>Display Name</th><th>Phone Number</th><th>Email Address</th></tr>";
     for (var i = 0; i<contacts.length; i++){
         var name = contacts[i].displayName;
         var phone = contacts[i].PhoneNumber;
         var email = contacts[i].emails;
-    var searchresult = "Display Name = " + (name) + " " + "Phone Number = " + (phone) +
-    "Email Address = " + (email) + "<br>";
-    document.getElementById("contactname").innerHTML = searchresult;
+    table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td><td>" + (email) + "</td></tr>";
+    
     }
+    document.getElementById("contactname").innerHTML = table;
 }
 
 function onError(contactError) {
