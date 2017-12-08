@@ -671,9 +671,9 @@ function onSuccess(contacts) {
     var table = document.createElement ("table");
     table = "<table border = 1><tr><th>Display Name</th><th>Phone Numbers</th/</tr>";
     for (var i = 0; i<contacts.length; i++){
-        alert(contacts[i].name);
+        alert(contacts[i].name.givenName);
         var phone = "";
-        var name = contacts[i].name;
+        var name = contacts[i].name.givenName;
         if (contact.phoneNumbers !== null) 
 {
 for (count=0; count < contact[i].phoneNumbers.length; count++) 
