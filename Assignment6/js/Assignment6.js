@@ -670,10 +670,10 @@ function onSuccess(contacts) {
     var table = document.createElement ("table");
     table = "<table border = 1><tr><th>Display Name</th><th>Phone Number</th><th>Email Address</th></tr>";
     for (var i = 0; i<contacts.length; i++){
-        alert(contacts[i].phoneNumbers[i].value);
+        
         var name = contacts[i].displayName;
-        var phone = contacts[i].phoneNumbers;
-        var email = contacts[i].emails;
+        var phone = contacts[i].phoneNumbers[i].value;
+        var email = contacts[i].emails[i].value;
     table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td><td>" + (email) + "</td></tr>";
     
     }
