@@ -29,17 +29,37 @@ version     = "0.0.1" >
      
     <plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" />
     <plugin name="cordova-plugin-camera" source="npm" spec= "3.0.0"/>
-<config-file target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need camera access to take pictures</string>
+<config-file file="*-Info.plist" parent="NSCameraUsageDescription" mode="merge">
+    <array>
+        <dict>
+            <key>NSCameraUsageDescription</key>
+            <string>need camera access to take pictures</string>
+        </dict>
+    </array>   
 </config-file>
-<config-file target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need to photo library access to get pictures from there</string>
+<config-file file="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="merge">
+    <array>
+        <dict>
+            <key>NSPhotoLibraryUsageDescription</key>
+            <string>need to photo library access to get pictures from there</string>
+        </dict>
+    </array>
 </config-file>
-<config-file target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need location access to find things nearby</string>
+<config-file file="*-Info.plist" parent="NSLocationWhenInUseUsageDescription" mode="merge">
+    <array>
+        <dict>
+            <key>NSLocationWhenInUseUsageDescription</key>
+            <string>need location access to find things nearby</string>
+        </dict>
+    </array>
 </config-file>
-<config-file target="NSContactsUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need contacts access to search friends</string>
+<config-file file="*-Info.plist" parent="NSContactsUsageDescription" mode="merge">
+    <array>
+        <dict>
+            <key>NSContactsUsageDescription</key>
+            <string>need contacts access to search friends</string>
+        </dict>
+    </array>
 </config-file>
 <config-file target = "CAMERA_USAGE_DESCRIPTION" file="*-Info.plist" mode="merge">
     <string>need camera access to take picture in app</string>
