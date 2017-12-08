@@ -672,8 +672,9 @@ function onSuccess(contacts) {
     for (var i = 0; i<contacts.length; i++){
         
         var name = contacts[i].displayName;
-        var phone = contacts[i].phoneNumbers[i].value;
+        var phone = contacts[i].phoneNumbers[0].value;
         var email = contacts[i].emails[i].value;
+        
     table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td><td>" + (email) + "</td></tr>";
     
     }
