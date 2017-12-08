@@ -673,7 +673,7 @@ function onSuccess(contacts) {
         
         var name = contacts[i].displayName;
         var phone = contacts[i].phoneNumbers[0].value;
-        var email = contacts[i].emails[i].value;
+        var email = contacts[i].emails[0].value;
         
     table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td><td>" + (email) + "</td></tr>";
     
