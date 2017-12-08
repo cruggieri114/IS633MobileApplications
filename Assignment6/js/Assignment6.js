@@ -672,9 +672,22 @@ function onSuccess(contacts) {
     for (var i = 0; i<contacts.length; i++){
         
         var name = contacts[i].displayName;
-        var phone = contacts[i].phoneNumbers[0].value;
-        var email = contacts[i].emails[0].value;
-        
+        var phone = "";
+        var email = "";
+        if (contacts.phoneNumbers !== null) 
+        {
+        for (count=0; count < contact.phoneNumbers.length; count++) 
+        {
+        phone += contacts[i].phoneNumbers[count].value;
+        }
+        if (contact.emails !== null) 
+        {
+        for(count=0; count < contact.emails.length; count++) 
+        {
+        email += contacts[i].emails[count].value;
+        }
+        }
+        }
     table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td><td>" + (email) + "</td></tr>";
     
     }
