@@ -679,17 +679,18 @@ for (count=0; count < contact[i].phoneNumbers.length; count++)
 {
 phone += count[i].phoneNumbers[count].value + ", ";
 }
-
+        }
         
         
     table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td></tr>";
     
     }
     document.getElementById("contactname").innerHTML = table;
-}
-}
+
+
 function onError(contactError) {
     alert('onError!');
 }
 
+}
 }
