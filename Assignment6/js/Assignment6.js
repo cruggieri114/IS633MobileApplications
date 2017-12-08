@@ -672,7 +672,7 @@ function onSuccess(contacts) {
     table = "<table border = 1><tr><th>Display Name</th><th>Phone Numbers</th/</tr>";
     for (var i = 0; i<contacts.length; i++){
         var phone = "";
-        var name = contacts[i].givenName;
+        var name = contacts[i].name;
         if (contact.phoneNumbers !== null) 
 {
 for (count=0; count < contact[i].phoneNumbers.length; count++) 
