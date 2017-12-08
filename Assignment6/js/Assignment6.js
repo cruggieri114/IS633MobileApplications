@@ -612,8 +612,8 @@ navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: d
 function onSuccess(imageURI)
 {
 var picdisplay = document.getElementById("picturesque");
-pickdisplay.style.display = 'block';
-pickdisplay.src =  imageURI; 
+picdisplay.style.display = 'block';
+picdisplay.src =  imageURI; 
 }
 function onFail(message)
 {
