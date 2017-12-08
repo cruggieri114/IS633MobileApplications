@@ -660,7 +660,7 @@ function SearchContact(){
     var options      = new ContactFindOptions();
     options.filter   = lastname;
     options.multiple = true;
-    options.desiredFields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.emails];
+    options.desiredFields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers];
     options.hasPhoneNumber = true;
     var fields = [navigator.contacts.fieldType.displayName];
     navigator.contacts.find(fields, onSuccess, onError, options);
@@ -669,35 +669,25 @@ function onSuccess(contacts) {
     alert('Found ' + contacts.length + ' contacts.');
     var count = "";
     var table = document.createElement ("table");
-    table = "<table border = 1><tr><th>Display Name</th><th>Phone Number</th><th>Email Address</th></tr>";
+    table = "<table border = 1><tr><th>Display Name</th><th>Phone Number</th></tr>";
     for (var i = 0; i<contacts.length; i++){
         
         var name = contacts[i].displayName;
         var phone = "";
-        var email = "";
+        
         if (contacts.phoneNumbers !== null) 
         {
-            alert(contacts[i].phoneNumbers.length);
+            
         for (count=0; count < contacts[i].phoneNumbers.length; count++) 
         {
         phone += contacts[i].phoneNumbers[count].value;
         }
-                if (contacts.emails !== null) 
-        {
-            alert(contacts[i].emails.length);
-        for(count=0; count < contacts[i].emails.length; count++) 
-        {
-        email += contacts[i].emails[count].value;
-        }
-        }
-        else{
-        email = "";
-        }
+        
         }
         else{
             phone = "";
         }
-    table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td><td>" + (email) + "</td></tr>";
+    table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td></tr>";
     
     }
     document.getElementById("contactname").innerHTML = table;
