@@ -667,27 +667,11 @@ function SearchContact(){
     
 function onSuccess(contacts) {
     alert('Found ' + contacts.length + ' contacts.');
-    var count = "";
+   
     var table = document.createElement ("table");
-    table = "<table border = 1><tr><th>Display Name</th><th>Phone Number</th></tr>";
-    for (var i = 0; i<contacts.length; i++){
-        
-        var name = contacts[i].displayName;
-        var phone = "";
-        
-        if (contacts.phoneNumbers !== null) 
-        {
-            
-        for (count=0; count < contacts[i].phoneNumbers.length; count++) 
-        {
-        phone += contacts[i].phoneNumbers[count].value + ", ";
-        }
-        
-        }
-        else{
-            phone = "";
-        }
-    table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td></tr>";
+    table = "<table border = 1><tr><th>Display Name</th></tr>";
+    
+    table += "<tr><td>" + (name) + "</td></tr>";
     
     }
     document.getElementById("contactname").innerHTML = table;
