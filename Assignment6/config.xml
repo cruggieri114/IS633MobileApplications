@@ -28,14 +28,14 @@ version     = "0.0.1" >
  <platform name="ios">
      <preference name="NSCameraUsageDescription" default="EWM - Camera/Kamera" />
 
-      <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+      <config-file target="Info.plist" parent="NSCameraUsageDescription">
 
          <string>need camera access to take pictures</string>
 
       </config-file>
             <preference name="NSPhotoLibraryUsageDescription" default="EWM - Photo Library/Fotobibliothek" />
 
-      <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+      <config-file target="Info.plist" parent="NSPhotoLibraryUsageDescription">
 
          <string>need to photo library access to get pictures from there</string>
 
