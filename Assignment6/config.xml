@@ -26,9 +26,7 @@ version     = "0.0.1" >
 
 <preference name="SplashScreenDelay" value="3000"/>
  <platform name="ios">
-    <config-file platform="ios" parent="NSCameraUsageDescription" mode="replace">
-        <NSCameraUsageDescription value="need camera access to take pictures in app">need camera access to take pictures in app</NSCameraUsageDescription>
-    </config-file>
+    
     <plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" />
     <edit-config target="NSCameraUsageDescription" file="Info.plist" mode="merge">
     <string>need camera access to take pictures</string>
