@@ -682,7 +682,7 @@ function onSuccess(contacts) {
         {
         phone += contacts[i].phoneNumbers[count].value;
         }
-        if (contacts.emails !== null) 
+                if (contacts.emails !== null) 
         {
             alert(contacts[i].emails.length);
         for(count=0; count < contacts[i].emails.length; count++) 
@@ -690,6 +690,12 @@ function onSuccess(contacts) {
         email += contacts[i].emails[count].value;
         }
         }
+        else{
+        email = "";
+        }
+        }
+        else{
+            phone = "";
         }
     table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td><td>" + (email) + "</td></tr>";
     
