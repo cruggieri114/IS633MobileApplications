@@ -660,9 +660,9 @@ function SearchContact(){
     var options      = new ContactFindOptions();
     options.filter   = lastname;
     options.multiple = true;
-    options.desiredFields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.emails];
+    options.desiredFields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.emails];
     options.hasPhoneNumber = true;
-    var fields = [navigator.contacts.fieldType.displayName];
+    var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.phoneNumbers];
     navigator.contacts.find(fields, onSuccess, onError, options);
     
 function onSuccess(contacts) {
@@ -670,7 +670,7 @@ function onSuccess(contacts) {
     var table = document.createElement ("table");
     table = "<table border = 1><tr><th>Display Name</th><th>Phone Number</th><th>Email Address</th></tr>";
     for (var i = 0; i<contacts.length; i++){
-        alert(contacts[i].name);
+        alert(contacts[i].phoneNumbers);
         var name = contacts[i].displayName;
         var phone = contacts[i].phoneNumbers;
         var email = contacts[i].emails;
