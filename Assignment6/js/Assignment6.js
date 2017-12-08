@@ -662,7 +662,7 @@ function SearchContact(){
     options.multiple = true;
     options.desiredFields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.emails];
     options.hasPhoneNumber = true;
-    var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.emails];
+    var fields = [navigator.contacts.fieldType.displayName];
     navigator.contacts.find(fields, onSuccess, onError, options);
     
 function onSuccess(contacts) {
@@ -677,13 +677,15 @@ function onSuccess(contacts) {
         var email = "";
         if (contacts.phoneNumbers !== null) 
         {
-        for (count=0; count < contacts.phoneNumbers.length; count++) 
+            alert(contacts[i].phoneNumbers.length);
+        for (count=0; count < contacts[i].phoneNumbers.length; count++) 
         {
         phone += contacts[i].phoneNumbers[count].value;
         }
         if (contacts.emails !== null) 
         {
-        for(count=0; count < contacts.emails.length; count++) 
+            alert(contacts[i].emails.length);
+        for(count=0; count < contacts[i].emails.length; count++) 
         {
         email += contacts[i].emails[count].value;
         }
