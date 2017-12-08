@@ -26,6 +26,7 @@ version     = "0.0.1" >
 
 <preference name="SplashScreenDelay" value="3000"/>
  <platform name="ios">
+    <plugin name="cordova-plugin-contacts" source="npm" spec="3.0.0" />
     <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
     <string>need camera access to take pictures</string>
 </edit-config>
@@ -77,6 +78,7 @@ version     = "0.0.1" >
     <splash src="www/iOS/Resources/splash/Default-1242@3x~iphone6s-landscape_2208x1242.png" width="2208" height="1242"/>
   </platform>
   <platform name="android">
+    <plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" />
     <plugin name="cordova-plugin-camera" source="npm" spec= "1.2.0" />
     <icon src="www/Android/res/drawable/icon.png" width = "96" height="96"/>
     <icon src="www/Android/res/drawable-ldpi/icon.png" width="36" height="36" />
@@ -102,7 +104,7 @@ version     = "0.0.1" >
   </platform>  
   
 
-<plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" />
+
 <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
     <string>need camera access to take pictures</string>
 </edit-config>
