@@ -38,7 +38,16 @@ version     = "0.0.1" >
 <edit-config target="NSContactsUsageDescription" file="*-Info.plist" mode="merge">
     <string>need contacts access to search friends</string>
 </edit-config>
-<plugin name="cordova-plugin-camera" source="npm" spec= "3.0.0"/>
+<edit-config target = "CAMERA_USAGE_DESCRIPTION" file="*-Info.plist" mode="merge">
+    <string>need camera access to take picture in app</string>
+</edit-config>
+<edit-config target="PHOTOLIBRARY_USAGE)DESCRIPTION" file="*-Info.plist" mode="merge">
+    <string>need camera access to take picture in app</string>
+</edit-config>
+<plugin name="cordova-plugin-camera" source="npm" spec= "3.0.0">
+    <variable name="CAMERA_USAGE_DESCRIPTION" VALUE="need camera access to take picture in app"/>
+    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="need camera access to take picture in app" />
+</plugin>
 <cordova plugin = "cordova-plugin-ios-camera-permissions --save" />
     <icon src="www/iOS/Resources/icons/Icon-small.png" width = "29" height="29"/>
     <icon src="www/iOS/Resources/icons/Icon.png" width="57" height="57" />
