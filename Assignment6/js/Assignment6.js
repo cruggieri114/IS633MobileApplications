@@ -669,13 +669,20 @@ function onSuccess(contacts) {
     alert('Found ' + contacts.length + ' contacts.');
     
     var table = document.createElement ("table");
-    table = "<table border = 1><tr><th>Display Name</th></tr>";
+    table = "<table border = 1><tr><th>Display Name</th><th>Phone Numbers</th/</tr>";
     for (var i = 0; i<contacts.length; i++){
+        var phone = "";
+        var name = contacts[i].givenName;
+        if (contact.phoneNumbers !== null) 
+{
+for (count=0; count < contact[i].phoneNumbers.length; count++) 
+{
+phone += count[i].phoneNumbers[count].value + ", ";
+}
+
         
-        var name = contacts[i].displayName;
         
-        
-    table += "<tr><td>" + (name) + "</td></tr>";
+    table += "<tr><td>" + (name) + "</td><td>" + (phone) + "</td></tr>";
     
     }
     document.getElementById("contactname").innerHTML = table;
