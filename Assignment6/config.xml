@@ -27,9 +27,9 @@ version     = "0.0.1" >
 <preference name="SplashScreenDelay" value="3000"/>
  <platform name="ios">
      
-    <plugin name="cordova-plugin-contacts" source="npm"/>
+    <plugin name="cordova-plugin-contacts" source="npm" spec="2.3.1"/>
           
-    <plugin name="cordova-plugin-camera" source="npm" />
+    <plugin name="cordova-plugin-camera" source="npm" spec="2.4.1"/>
          
 <cordova plugin = "cordova-plugin-ios-camera-permissions --save" />
     <icon src="www/iOS/Resources/icons/Icon-small.png" width = "29" height="29"/>
