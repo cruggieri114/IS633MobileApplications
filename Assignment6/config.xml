@@ -28,11 +28,11 @@ version     = "0.0.1" >
  <platform name="ios">
      
     <plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" >
-        <variable name="NSContactsUsageDescription" value="need contacts access to search friends"/>
+        <variable name="CONTACTS_USAGE_DESCRIPTION" value="need contacts access to search friends"/>
     </plugin>    
     <plugin name="cordova-plugin-camera" source="npm" spec= "3.0.0">
-        <variable name="NSCameraUsageDescription" value="need camera access to take pictures"/>
-        <variable name="NSPhotoLibraryUsageDescription" value = "need to photo library access to get pictures from there"/>
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="need camera access to take pictures"/>
+        <variable name="PHOTOlIBRARY_USAGE_DESCRIPTION" value = "need to photo library access to get pictures from there"/>
     </plugin>
 <gap:config-file file="*-Info.plist" parent="NSCameraUsageDescription" overwrite = "true">
     <array>
