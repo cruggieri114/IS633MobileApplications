@@ -12,6 +12,8 @@ function whichselect (value){
     document.getElementById("Input").value = "";
     document.getElementById("accesscamera").style.visibility = "hidden";
     document.getElementById("getcontacts").style.viibility = "hidden";
+    document.getElementById("batinfo").style.viibility = "hidden";
+    document.getElementById("netinfo").style.viibility = "hidden";
     var obj1 = document.getElementById("confirm");
     var obj2 = document.getElementById("confirmyes");
     var obj3 = document.getElementById("confirmno");
@@ -56,6 +58,14 @@ function whichselect (value){
             break;
         case "contacts":
             document.getElementById("getcontacts").style.visibility = "visible";
+            break;
+        case "battery":
+            document.getElementById("batinfo").style.visibility = "visible";
+            onBatteryStatus(status);
+            break;
+        case "network":
+            document.getElementById("netinfo").style.visibility = "visible";
+            checkConnection();
             break;
         default:
             alert("Please Select A Valid Option");
@@ -694,4 +704,26 @@ function onError(contactError) {
 }
 
 
+}
+window.addEventListener("batterystatus", onBatteryStatus, false);
+function onBatteryStatus(status) {
+    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
+    var message = "Battery Level " + status.level + "%. Device is " + status.isPlugged;
+    document.getElementById("batstats").innerHTML = message;
+}
+
+function checkConnection() {
+    var networkState = navigator.connection.type;
+ 
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+ 
+    document.getElementById("networklabel").innerHTML = ('Connection type: ' + states[networkState]);
 }
