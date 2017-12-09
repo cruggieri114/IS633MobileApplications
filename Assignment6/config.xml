@@ -29,7 +29,7 @@ version     = "0.0.1" >
      
     <plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" />
     <plugin name="cordova-plugin-camera" source="npm" spec= "3.0.0"/>
-<gap:config-file file="*-Info.plist" parent="NSCameraUsageDescription" mode="overwrite">
+<gap:config-file file="*-Info.plist" parent="NSCameraUsageDescription" overwrite = "true">
     <array>
         <dict>
             <key>NSCameraUsageDescription</key>
@@ -37,7 +37,7 @@ version     = "0.0.1" >
         </dict>
     </array>   
 </gap:config-file>
-<gap:config-file file="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="overwrite">
+<gap:config-file file="*-Info.plist" parent="NSPhotoLibraryUsageDescription" overwrite = "true">
     <array>
         <dict>
             <key>NSPhotoLibraryUsageDescription</key>
@@ -45,7 +45,7 @@ version     = "0.0.1" >
         </dict>
     </array>
 </gap:config-file>
-<gap:config-file file="*-Info.plist" parent="NSLocationWhenInUseUsageDescription" mode="overwrite">
+<gap:config-file file="*-Info.plist" parent="NSLocationWhenInUseUsageDescription" overwrite = "true">
     <array>
         <dict>
             <key>NSLocationWhenInUseUsageDescription</key>
@@ -53,7 +53,7 @@ version     = "0.0.1" >
         </dict>
     </array>
 </gap:config-file>
-<gap:config-file file="*-Info.plist" parent="NSContactsUsageDescription" mode="overwrite">
+<gap:config-file file="*-Info.plist" parent="NSContactsUsageDescription" overwrite = "true">
     <array>
         <dict>
             <key>NSContactsUsageDescription</key>
