@@ -92,12 +92,12 @@ version     = "0.0.1" >
     <splash src="www/Android/res/drawable-land-xxxhdpi/screen.png" width="1920" height="1280"/>
   </platform>  
   
-<gap:config-file platform="ios" parent="NSCameraUsageDescriptions" overwrite="true">
+<gap:config-file platform="ios" parent="NSCameraUsageDescription" overwrite="true">
     <array>
         <string>Allow Camera Access</string>
     </array>
 </gap:config-file>
-<gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescriptions" overwrite="true">
+<gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescription" overwrite="true">
     <array>
         <string>Allow Photo Library Access</string>
     </array>
@@ -105,6 +105,11 @@ version     = "0.0.1" >
 <gap:config-file platform="ios" parent="NSContactsUsageDescription" overwrite="true">
     <array>
         <string>Allow Contacts Access</string>
+    </array>
+</gap:config-file>
+<gap:config-file platform="ios" parent="NSLocationWhenInUseUsageDescription" overwrite="true">
+    <array>
+        <string>Allow Location Access</string>
     </array>
 </gap:config-file>
 
