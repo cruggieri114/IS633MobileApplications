@@ -58,8 +58,7 @@ version     = "0.0.1" >
     <splash src="www/iOS/Resources/splash/Default-1242@3x~iphone6s-landscape_2208x1242.png" width="2208" height="1242"/>
   </platform>
   <platform name="android">
-    <plugin name="cordova-plugin-contacts" source="npm" spec="2.3.1" />
-    <plugin name="cordova-plugin-camera" source="npm" spec= "2.4.0" />
+    
     <icon src="www/Android/res/drawable/icon.png" width = "96" height="96"/>
     <icon src="www/Android/res/drawable-ldpi/icon.png" width="36" height="36" />
     <icon src="www/Android/res/drawable-mdpi/icon.png" width="48" height="48" />
