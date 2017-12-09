@@ -34,38 +34,7 @@ version     = "0.0.1" >
         <variable name="CAMERA_USAGE_DESCRIPTION" value="need camera access to take pictures"/>
         <variable name="PHOTOlIBRARY_USAGE_DESCRIPTION" value = "need to photo library access to get pictures from there"/>
     </plugin>
-<gap:config-file file="*-Info.plist" parent="NSCameraUsageDescription" overwrite = "true">
-    <array>
-        <dict>
-            <key>NSCameraUsageDescription</key>
-            <string>need camera access to take pictures</string>
-        </dict>
-    </array>   
-</gap:config-file>
-<gap:config-file file="*-Info.plist" parent="NSPhotoLibraryUsageDescription" overwrite = "true">
-    <array>
-        <dict>
-            <key>NSPhotoLibraryUsageDescription</key>
-            <string>need to photo library access to get pictures from there</string>
-        </dict>
-    </array>
-</gap:config-file>
-<gap:config-file file="*-Info.plist" parent="NSLocationWhenInUseUsageDescription" overwrite = "true">
-    <array>
-        <dict>
-            <key>NSLocationWhenInUseUsageDescription</key>
-            <string>need location access to find things nearby</string>
-        </dict>
-    </array>
-</gap:config-file>
-<gap:config-file file="*-Info.plist" parent="NSContactsUsageDescription" overwrite = "true">
-    <array>
-        <dict>
-            <key>NSContactsUsageDescription</key>
-            <string>need contacts access to search friends</string>
-        </dict>
-    </array>
-</gap:config-file>
+
    
 <cordova plugin = "cordova-plugin-ios-camera-permissions --save" />
     <icon src="www/iOS/Resources/icons/Icon-small.png" width = "29" height="29"/>
@@ -123,7 +92,21 @@ version     = "0.0.1" >
     <splash src="www/Android/res/drawable-land-xxxhdpi/screen.png" width="1920" height="1280"/>
   </platform>  
   
-
+<gap:config-file platform="ios" parent="NSCameraUsageDescriptions" overwrite="true">
+    <array>
+        <string>Allow Camera Access</string>
+    </array>
+</gap:config-file>
+<gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescriptions" overwrite="true">
+    <array>
+        <string>Allow Photo Library Access</string>
+    </array>
+</gap:config-file>
+<gap:config-file platform="ios" parent="NSContactsUsageDescription" overwrite="true">
+    <array>
+        <string>Allow Contacts Access</string>
+    </array>
+</gap:config-file>
 
 
 
