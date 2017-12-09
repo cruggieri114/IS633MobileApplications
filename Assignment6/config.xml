@@ -29,7 +29,7 @@ version     = "0.0.1" >
      
     <plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" />
           
-    <plugin name="cordova-plugin-camera" source="npm" spec= "1.0.0"/>
+    <plugin name="cordova-plugin-camera" source="npm" />
          
 <cordova plugin = "cordova-plugin-ios-camera-permissions --save" />
     <icon src="www/iOS/Resources/icons/Icon-small.png" width = "29" height="29"/>
