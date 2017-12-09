@@ -12,7 +12,7 @@ function whichselect (value){
     document.getElementById("Input").value = "";
     document.getElementById("accesscamera").style.visibility = "hidden";
     document.getElementById("getcontacts").style.viibility = "hidden";
-    document.getElementById("batinfo").style.viibility = "hidden";
+    document.getElementById("devinfo").style.viibility = "hidden";
     document.getElementById("netinfo").style.viibility = "hidden";
     var obj1 = document.getElementById("confirm");
     var obj2 = document.getElementById("confirmyes");
@@ -59,9 +59,9 @@ function whichselect (value){
         case "contacts":
             document.getElementById("getcontacts").style.visibility = "visible";
             break;
-        case "battery":
-            document.getElementById("batinfo").style.visibility = "visible";
-            onBatteryStatus(status);
+        case "device":
+            document.getElementById("devinfo").style.visibility = "visible";
+            onDeviceReady();
             break;
         case "network":
             document.getElementById("netinfo").style.visibility = "visible";
@@ -705,11 +705,13 @@ function onError(contactError) {
 
 
 }
-window.addEventListener("batterystatus", onBatteryStatus, false);
-function onBatteryStatus(status) {
-    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
-    var message = "Battery Level " + status.level + "%. Device is " + status.isPlugged;
-    document.getElementById("batstats").innerHTML = message;
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    document.getElementById("deviceinfo").innerHTML = "Cordova Version: " + device.cordova +
+    "<br>Device Model: " + device.model + "<br>Device Platform: " + device.platform + "<br>Device UUID: " +
+    device.uuid + "<br>Device Version: " + device.version + "<br>Device Manufacturer: " + device.manufacturer +
+    "<br>Virtual Device? " + device.isVirtual + "<br>Device Serial Number: " + device.serial;
+    
 }
 
 function checkConnection() {
