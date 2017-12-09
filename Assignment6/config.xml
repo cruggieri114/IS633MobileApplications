@@ -35,7 +35,7 @@ version     = "0.0.1" >
     <icon src="www/iOS/Resources/icons/Icon-40@2x.png" width="80" height="80" />
     <icon src="www/iOS/Resources/icons/Icon-50.png" width="50" height="50" />
     <icon src="www/iOS/Resources/icons/Icon-small.png" width="58" height="58" />
-    <icon src="www/iOS\Resources/icons/Icon-72.png" width="72" height="72" />
+    <icon src="www/iOS/Resources/icons/Icon-72.png" width="72" height="72" />
     <icon src="www/iOS/Resources/icons/Icon-72@2x.png" width="144" height="144" />
     <icon src="www/iOS/Resources/icons/Icon-60.png" width="60" height="60" />
     <icon src="www/iOS/Resources/icons/Icon-60@2x.png" width="120" height="120" />
