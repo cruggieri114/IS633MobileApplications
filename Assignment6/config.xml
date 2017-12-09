@@ -29,46 +29,39 @@ version     = "0.0.1" >
      
     <plugin name="cordova-plugin-contacts" source="npm" spec="1.1.0" />
     <plugin name="cordova-plugin-camera" source="npm" spec= "3.0.0"/>
-<config-file file="*-Info.plist" parent="NSCameraUsageDescription" mode="merge">
+<gap:config-file file="*-Info.plist" parent="NSCameraUsageDescription" mode="overwrite">
     <array>
         <dict>
             <key>NSCameraUsageDescription</key>
             <string>need camera access to take pictures</string>
         </dict>
     </array>   
-</config-file>
-<config-file file="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="merge">
+</gap:config-file>
+<gap:config-file file="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="overwrite">
     <array>
         <dict>
             <key>NSPhotoLibraryUsageDescription</key>
             <string>need to photo library access to get pictures from there</string>
         </dict>
     </array>
-</config-file>
-<config-file file="*-Info.plist" parent="NSLocationWhenInUseUsageDescription" mode="merge">
+</gap:config-file>
+<gap:config-file file="*-Info.plist" parent="NSLocationWhenInUseUsageDescription" mode="overwrite">
     <array>
         <dict>
             <key>NSLocationWhenInUseUsageDescription</key>
             <string>need location access to find things nearby</string>
         </dict>
     </array>
-</config-file>
-<config-file file="*-Info.plist" parent="NSContactsUsageDescription" mode="merge">
+</gap:config-file>
+<gap:config-file file="*-Info.plist" parent="NSContactsUsageDescription" mode="overwrite">
     <array>
         <dict>
             <key>NSContactsUsageDescription</key>
             <string>need contacts access to search friends</string>
         </dict>
     </array>
-</config-file>
-<config-file target = "CAMERA_USAGE_DESCRIPTION" file="*-Info.plist" mode="merge">
-    <string>need camera access to take picture in app</string>
-</config-file>
-<config-file target="PHOTOLIBRARY_USAGE_DESCRIPTION" file="*-Info.plist" mode="merge">
-    <string>need camera access to take picture in app</string>
-</config-file>
-
-    
+</gap:config-file>
+   
 <cordova plugin = "cordova-plugin-ios-camera-permissions --save" />
     <icon src="www/iOS/Resources/icons/Icon-small.png" width = "29" height="29"/>
     <icon src="www/iOS/Resources/icons/Icon.png" width="57" height="57" />
