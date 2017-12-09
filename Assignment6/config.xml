@@ -16,22 +16,18 @@ version     = "0.0.1" >
 <author>
     Chris Ruggieri
 </author>
-<preference name="phonegap-version" value="cli-6.1.0" />
+<preference name="phonegap-version" value="cli-7.0.1" />
 <plugin name="cordova-plugin-whitelist" source="npm" />
 <access origin="*" />
 <plugin name="cordova-plugin-geolocation" spec="2.4.3" source="npm" />
 <icon src="icon.png" />
 <splash src="splash.png" />
 <plugin name="cordova-plugin-splashscreen" source="npm"/>
+<plugin name="cordova-plugin-contacts" source="npm" spec="2.3.1"/>
+<plugin name="cordova-plugin-camera" source="npm" spec="2.4.1"/>
 
 <preference name="SplashScreenDelay" value="3000"/>
  <platform name="ios">
-     
-    <plugin name="cordova-plugin-contacts" source="npm" spec="2.3.1"/>
-          
-    <plugin name="cordova-plugin-camera" source="npm" spec="2.4.1"/>
-         
-<cordova plugin = "cordova-plugin-ios-camera-permissions --save" />
     <icon src="www/iOS/Resources/icons/Icon-small.png" width = "29" height="29"/>
     <icon src="www/iOS/Resources/icons/Icon.png" width="57" height="57" />
     <icon src="www/iOS/Resources/icons/Icon@2x.png" width="114" height="114" />
