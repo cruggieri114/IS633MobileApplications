@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    
+    <title>Chris Ruggieri Assignment 6</title>
+    <link rel= "stylesheet" type= "text/css" href= "./Styles/Assignment6.css" />
+    <script type="text/javascript" src="./js/Assignment6.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDFm8bsWubC3lanQ5SsPhaq2A7KIZb3JQA&callback=CreateMap"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+<script>
+    
+var objContact;
+var picturesource;
+var destinationtype;
+
+document.addEventListener("deviceready",onDeviceReady,false);
+
+function onDeviceReady(){
+picturesource = navigator.camera.PictureSourceType;
+destinationtype = navigator.camera.DestinationType;
+objContact = navigator.contacts.create();
+}
+</script> 
+    
+</head>
+
+<body>
+<header>
+        <h1>
+            Chris Ruggieri Assignment 6
+        </h1>
+</header>
+    <hr>
+    <section id ="title">
+<select name= "selection" id= "selection" onchange="whichselect(this.value);">
+        <option value= "Pleaseselect" selected="selected">Please Select An Option</option>
+        <option value= "ShowAll">All Customers</option>
+        <option value= "InputCustomer">Enter Customer Name</option>
+        <option value= "current">List Current Orders</option>
+        <option value= "change">Change An Order</option>
+        <option value= "add">Add A Customer</option>
+        <option value= "delete">Delete a Customer</option>
+        <option value= "location">Get Current Location</option>
+        <option value= "camera">Take A Picture</option>
+        <option value= "contacts">Access Contacts</option>
+        <option value = "about">About</option>
+               
+    </select>
+</section>
+<hr>
+
+<section id= "section1">
+        <h2> Customer List  </h2>
+        <hr>
+        <input type="button" id="listadd" name= "listadd" value= "Add Customer"
+               onclick="whichselect('add') ;">
+        <label id = "CustList">Customer List</label>
+        
+       
+    </section>
+
+ <section id= "section2">
+        <h2> Customer Order History</h2>
+        <br>
+        <form name="input">
+        <label>Please Enter the Customer ID</label>
+        <input type= "text" id="Input" name= "Input" size= 40/>
+        <input type= "button" id="submit" name= "submit" value= "Submit"
+        onclick= "StoreInput () ;">
+        <br>
+        </form>
+        <hr>
+        <label id = "CustHist">Order History</label>
+        <hr>
+        <br>
+        <input type= "button" id= "back" name= "Back" value= "Back"
+        onclick= "whichselect ('ShowAll') ;">
+        
+        
+    </section>
+   <section id="aboutsection">
+    <h2>About This App</h2>
+    <br>
+    This app was written by Chris Ruggieri for UAB IS 633 Mobile Applications Course.  This app allows you to pull Customer
+    Names and Order Histories for a ficticous company.  You can select "All Customers" to pull a table of all the stores.
+    You can select the store and pull its history or you can input the Customer ID to pull its history.
+   </section>
+   
+   <section id="custorders">
+    <h2>Customer Current Orders</h2>
+    <br>
+    <form name="orderlist">
+        <label>Please Enter the Customer ID</label>
+        <input type= "text" id="List" name= "Input" size= 40/>
+        <input type= "button" id="submitlist" name= "listbutton" value= "Submit"
+        onclick= "CurrentOrder () ;">
+        <br>
+        </form>
+        <label id= "listorder">Current Orders</label>
+        <br>
+        <input type= "button" id= "back2" name= "Back2" value= "Back"
+        onclick= "whichselect ('ShowAll') ;">
+   </section>
+   <section id= "changeorder">
+    <h2>Change Current Order</h2>
+    <br>
+    <form name = "changeinput">
+        <label> Please Enter an Order Number</label>
+        <input type= "text" id="ordernum" name="ordernum" size= 40/>
+        <input type= "button" id="submitorder" name= "ordernumbutton" value="Submit Order Number"
+               onclick= "InputOrderNumber() ;">
+        <br>
+    </form>
+    <label id="changelabel">Change Form</label>
+    <form id="changeform">
+        <table>
+            <tr>
+                <th>Order ID: </th>
+                <th><label id= "orderlabel"></label><br></th>
+            </tr>
+            <tr>
+                <th>Shipping Address: </th>
+                <th><input type= "text" id= "shipaddress" size= 40 />  <br></th>
+            </tr>
+            <tr>
+                <th>Shipping City </th>
+                <th><input type= "text" id= "shipcity" size= 40 />  <br></th>
+            </tr>
+            <tr>
+                <th>Shipping Name </th>
+                <th><input type= "text" id= "shipname" size= 40 />  <br></th>
+            </tr>
+            <tr>
+                <th>Shipping Postal Code </th>
+                <th><input type= "text" id= "shipcode" size= 40 /> <br></th>
+            </tr>
+        </table>
+        <input type= "button" id="makechange" name="makechange" value="Submit Changes"
+               onclick="ShowConfirm() ;">
+        <br>
+    </form>
+    <form id="confirmform">
+        <label id="confirm">Are you sure you want to make these changes?</label><br>
+        <input type = "button" id="confirmyes" name="confirmyes" value="Yes, make changes"
+               onclick="MakeChanges() ;">
+        <label id="spaces">       </label>
+        <input type = "button" id="confirmno" name="confirmno" value="No, Do NOT make these changes"
+               onclick="changeorder() ;">
+        <br><input type= "button" id="continue" name="continue" value="Continue to All Customers"
+                onclick="whichselect('ShowAll') ;">
+    </form>
+    <input type= "button" id= "backfromchange" name= "Backchange" value= "Back To All"
+        onclick= "whichselect ('ShowAll') ;">
+   </section>
+   <section id="addsection">
+    <h2>Add a Customer</h2>
+    <hr>
+    <form id="addform">
+        <table id="addtable">
+            <tr>
+                <th>Customer ID: </th>
+                <th><input type= "text" id= "addID" size= 40 minlength="5" maxlength="5"/>  <br></th>
+            </tr>
+            <tr>
+                <th>Customer Name: </th>
+                <th><input type= "text" id= "addname" size= 40 />  <br></th>
+            </tr>
+            <tr>
+                <th>Customer City: </th>
+                <th><input type= "text" id= "addcity" size= 40 />  <br></th>
+            </tr>
+        </table>
+        <input type= "button" id="addbutton" name="addbutton" value="Add Customer"
+               onclick="AddCust() ;">
+        <br>
+    </form>
+   </section>
+   <section id="deletesection">
+     <h2>Add a Customer</h2>
+    <hr>
+    <form id="delform">
+        <table id="deltable">
+            <tr>
+                <th>Customer ID: </th>
+                <th><input type= "text" id= "delID" size= 40 minlength = "5" maxlength= "5"/>  <br></th>
+            </tr>
+            
+        </table>
+        <input type= "button" id="deletebutton" name="deletebutton" value="Delete Customer"
+               onclick="DeleteCust() ;">
+        <br>
+    </form>
+   </section>
+   <section id="geolocat">
+    <h2>Get Your Current Location</h2>
+    <hr>
+    <input type="button" id="getlocat" name="getlocat" value="Find Your Current Location"
+           onclick="GetLocation() ;">
+    <br>
+    <label id="lattlabel">Your Current Lattitude:</label>
+    <label id="lattitude"></label>
+    <br>
+    <label id="longlabel">Your Current Longitude:</label>
+    <label id="longitude"></label>
+    <br><br>
+    <div id="map"></div>
+   </section>
+   
+   <section id="accesscamera">
+    <h2>Take A Picture</h2>
+    <hr>
+    <button onclick = "Photo() ; ">Take Picture</button>
+    <br>
+    <img id="picturesque" src=""/>
+    <br><br>
+   </section>
+   
+   <section id="getcontacts">
+    <h2>Access Contacts</hr2>
+    <br><hr>
+    <button onclick="ChooseContact() ;">Choose A Contact</button>
+    <br>
+    <hr>
+    <label>Enter Contact Last Name:  </label>
+    <input type= "text" id= "contactlast" size="40" minlength= "1">
+    <br>
+    <button onclick="SearchContact() ;">Search Contacts</button>
+    <br><br>
+    <label>Contact Name</label>
+    <label id="contactname"></label>
+    
+   </section>
+</body>
+</html>
