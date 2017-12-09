@@ -660,9 +660,9 @@ function SearchContact(){
     var options      = new ContactFindOptions();
     options.filter   = lastname;
     options.multiple = true;
-    options.desiredFields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers];
+    options.desiredFields = [navigator.contacts.fieldType.id, navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers];
     options.hasPhoneNumber = true;
-    var fields = [navigator.contacts.fieldType.displayName];
+    var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
     navigator.contacts.find(fields, onSuccess, onError, options);
     
 function onSuccess(contacts) {
